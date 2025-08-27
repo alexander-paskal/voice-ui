@@ -34,16 +34,19 @@ def moveMouse(x: int, y:int):
     pyautogui.moveTo(x, y)
     time.sleep(0.2)
 
-def leftClick(x: int, y: int):
-    moveMouse(x, y)
+def leftClick(x: int=None, y: int=None):
+    if x and y:
+        moveMouse(x, y)
     pyautogui.click(button='left')
 
 def rightClick(x: int, y: int):
-    moveMouse(x, y)
+    if x and y:
+        moveMouse(x, y)
     pyautogui.click(button='right')
 
 def doubleClick(x: int, y: int):
-    moveMouse(x, y)
+    if x and y:
+        moveMouse(x, y)
     pyautogui.doubleClick()
 
 def clickAndHold():
