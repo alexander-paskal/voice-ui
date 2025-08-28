@@ -61,7 +61,8 @@ if __name__ == "__main__":
                 except:
                     print("invalid json response")
                     add_text_message(history, "user", "invalid json response")
-                
+                    continue
+
                 if isinstance(obj, dict):
                     obj = [obj]
                 elif not isinstance(obj, list):
