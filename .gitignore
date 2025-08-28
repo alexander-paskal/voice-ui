@@ -2,3 +2,7 @@
 __pycache__
 *.pyc
 screenshot.png
+*.swp
+screenshot.png word.png
+*.png
+experiments/

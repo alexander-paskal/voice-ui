@@ -2,6 +2,7 @@ from prompt import PROMPT
 from tools import use_tool
 from query_gemini import query_gemini, add_image_message, add_text_message
 from speech_to_text import listen_and_transcribe
+from scripts import call_script
 from screen_grab import capture_screen
 import os
 import json
@@ -29,6 +30,12 @@ if __name__ == "__main__":
             while text is None:
                 text = listen_and_transcribe(verbose=1, pause_threshold=2)
         
+        
+        if call_script(text):
+            continue
+
+
+
         new_prompt = PROMPT + "\n\n" + f"User's query is: {text}"
         
         capture_screen("screenshot.png")

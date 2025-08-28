@@ -34,17 +34,26 @@ def moveMouse(x: int, y:int):
     pyautogui.moveTo(x, y)
     time.sleep(0.2)
 
+def moveMouseRel(dx: int, dy: int):
+    curx, cury = pyautogui.position()
+    sizex, sizey = pyautogui.size()
+
+    newx = (dx/100)*sizex + curx
+    newy = (dy/100)*sizey + cury
+    moveMouse(newx, newy)
+
+
 def leftClick(x: int=None, y: int=None):
     if x and y:
         moveMouse(x, y)
     pyautogui.click(button='left')
 
-def rightClick(x: int, y: int):
+def rightClick(x: int=None, y: int=None):
     if x and y:
         moveMouse(x, y)
     pyautogui.click(button='right')
 
-def doubleClick(x: int, y: int):
+def doubleClick(x: int=None, y: int=None):
     if x and y:
         moveMouse(x, y)
     pyautogui.doubleClick()
