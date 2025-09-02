@@ -87,9 +87,12 @@ def call_script(command):
         tools.keyPress("f4")
         return True
 
-    if command_stripped == "newtab":
+    if command_stripped == "tabover":
         tools.keyPress("ctrl+tab")
         return True
+
+    if command_stripped == "tabback":
+        tools.keyPress("ctrl+shift+tab")
 
     if command_stripped == "newwindow":
         tools.keyPress("ctrl+shift+n")
