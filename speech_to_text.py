@@ -2,18 +2,20 @@ import speech_recognition as sr
 import pyaudio
 import time
 
+
+recognizer = sr.Recognizer()
+
+
+# Adjust for ambient noise and energy threshold
+with sr.Microphone() as source:
+    recognizer.adjust_for_ambient_noise(source, duration=2)
+    print("Ready! Speak now...")
+
+
 def listen_and_transcribe(verbose=1, pause_threshold=0.8):
     # Initialize the recognizer
-    recognizer = sr.Recognizer()
+   
     recognizer.pause_threshold=pause_threshold
-
-    
-    # Adjust for ambient noise and energy threshold
-    with sr.Microphone() as source:
-        print("Adjusting for ambient noise... Please wait.")
-        recognizer.adjust_for_ambient_noise(source, duration=1)
-        print("Ready! Speak now...")
-    
     try:
         # Listen for audio input with automatic silence detection
         with sr.Microphone() as source:
