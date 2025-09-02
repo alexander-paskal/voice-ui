@@ -150,6 +150,10 @@ def call_script(command):
         pyautogui.hotkey("alt","left")
         return True
 
+    if command_stripped == "goforward":
+        pyautogui.hotkey("alt","right")
+        return True
+    
     if command_stripped == "swapwindow":
         pyautogui.keyDown("alt")
         pyautogui.press("tab")

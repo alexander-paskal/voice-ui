@@ -1,0 +1,21 @@
+Hello There!
+
+Welcome to Voice-UI! Below are the following commands you can use:
+
+- "press/hit {button(s)}" - press a key. Can say multiple keys at the same time 
+	i.e. "press control alt delete" -> "ctrl+alt+del"
+- "mouse/cursor up/down/left/right {percent of screen} - move the mouse by a percentage of the screen
+	i.e. "mouse up 30" -> moves the mouse up 30% of the screen
+	     "cursor left 15" -> moves the mouse left 15% of the screen
+- "left/right/double click" -> executes the specified click command
+- "hold click" -> holds the left mouse button down
+- "release" -> releases the left mouse button
+- "open/goto {app}" -> opens/gos to a specific app via the window command
+	i.e. "open chrome"
+- "swap window" -> alt+tab's back to the previous window
+- "enter" -> presses enter
+- "app select" -> opens the alt tab menu
+- "go back" -> hotkeys to alt+left
+- "new/close/reopen tab" -> hotkeys to the respective tab commands
+- "tab over/back" -> hotkeys to the respective tab commands
+
