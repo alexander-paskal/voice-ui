@@ -36,7 +36,9 @@ if __name__ == "__main__":
             continue
 
         if not args.enable_ai:
-            continue
+            if not call_script("press " + text):
+                continue
+
 
         new_prompt = PROMPT + "\n\n" + f"User's query is: {text}"
         
