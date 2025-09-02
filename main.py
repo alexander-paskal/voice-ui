@@ -18,6 +18,7 @@ if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument("--text-mode", action="store_true", help="activates text input mode")
     arg_parser.add_argument("--print-only", action="store_true", help="only prints model outputs")
+    arg_parser.add_argument("--enable-ai", action="store_true", help="enables AI backend")
     args = arg_parser.parse_args()
 
 
@@ -34,7 +35,8 @@ if __name__ == "__main__":
         if call_script(text):
             continue
 
-
+        if not args.enable_ai:
+            continue
 
         new_prompt = PROMPT + "\n\n" + f"User's query is: {text}"
         
