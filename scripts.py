@@ -26,7 +26,7 @@ def call_script(command):
         tools.keyPress(key)
         return True
 
-    if parts[0] == "mouse":
+    if parts[0] in ("mouse", "mass", "cursor"):
         if len(parts) < 3:
             return False
         try:
