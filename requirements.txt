@@ -1,0 +1,6 @@
+requests
+pyautogui
+pyaudio
+pillow
+word2num
+playaudio
