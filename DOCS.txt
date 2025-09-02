@@ -12,6 +12,7 @@ Welcome to Voice-UI! Below are the following commands you can use:
 - "release" -> releases the left mouse button
 - "open/goto {app}" -> opens/gos to a specific app via the window command
 	i.e. "open chrome"
+- "close" -> 
 - "swap window" -> alt+tab's back to the previous window
 - "enter" -> presses enter
 - "app select" -> opens the alt tab menu

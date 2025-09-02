@@ -18,6 +18,13 @@ def call_script(command):
     command_lowercase = command.lower().replace(".","")
     command_stripped = command_lowercase.strip().replace(" ", "")
     parts = command_lowercase.split(" ")
+    
+    for cmd in ["stop","kill","quit"]:
+        if command_stripped.startswith(cmd):
+            import sys
+            print("this is the end")
+            sys.exit(1)
+
 
 
     if parts[0] in ("press","hit") and len(parts) > 1:
@@ -26,6 +33,24 @@ def call_script(command):
         print("pressing {}".format(key))
         tools.keyPress(key)
         return True
+
+    if parts[0] in ("win","when") and len(parts) > 1:
+        key = "+".join(parts[1:])
+        key = "win+" + key
+        print("pressing {}".format(key))
+        tools.keyPress(key)
+        return True
+
+    if parts[0] in ("scroll",) and len(parts) > 1:
+        try:
+            amount = int(parts[1])
+        except ValueError:
+            amount = int(word2num(" ".join(parts[1:])))
+
+
+        tools.scroll(amount)
+        return True
+
 
     if parts[0] in ("mouse", "mass", "cursor"):
         if len(parts) < 3:
