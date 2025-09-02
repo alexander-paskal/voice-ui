@@ -119,8 +119,6 @@ def call_script(command):
     if command_stripped == "searchbar":
         tools.keyPress("alt+d")
         return True
-    
-    breakpoint()
 
     return False
 
