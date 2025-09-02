@@ -5,6 +5,7 @@ import time
 import string
 import tools
 from word2num import word2num
+import pyautogui
 
 KEYS_HELD = []
 def call_script(command):
@@ -138,9 +139,25 @@ def call_script(command):
             tools.releaseKeys(key)
         return True
 
-    if command_stripped == "appselect":
-        tools.holdKeys("alt+tab")
+    if command_stripped.startswith("appselect"):
+        tools.holdKeys("alt")
+        KEYS_HELD.append("alt")
+        tools.keyPress("tab")
+        time.sleep(0.2)
         return True
+
+    if command_stripped == "goback":
+        pyautogui.hotkey("alt","left")
+        return True
+
+    if command_stripped == "swapwindow":
+        pyautogui.keyDown("alt")
+        pyautogui.press("tab")
+        time.sleep(0.2)
+        pyautogui.keyUp("alt")
+
+    if command_stripped == "enter":
+        pyautogui.press('enter')
 
     return False
 
