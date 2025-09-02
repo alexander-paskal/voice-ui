@@ -61,8 +61,18 @@ def doubleClick(x: int=None, y: int=None):
 def clickAndHold():
     pyautogui.mouseDown(button='left')
 
+
 def release():
     pyautogui.mouseUp(button='left')
+
+
+
+def holdKeys(key: str):
+    pyautogui.keyDown(key)
+
+def releaseKeys(key: str):
+    pyautogui.keyUp(key)
+
 
 def typeText(text: str):
     text = str(text)

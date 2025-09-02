@@ -6,7 +6,7 @@ import string
 import tools
 from word2num import word2num
 
-
+KEYS_HELD = []
 def call_script(command):
     """
     Checks a command against a set of scripted command patterns
@@ -123,6 +123,21 @@ def call_script(command):
     if command_stripped == "searchbar":
         tools.keyPress("alt+d")
         return True
+
+    if parts[0] in "hold":
+        if len(parts) == 1:
+            return False
+        global KEYS_HELD
+        keys = "+".join(parts[1:])
+        tools.holdKeys(keys)
+        KEYS_HELD.append(keys)
+        return True
+
+    if command_stripped == "releasekeys":
+        for key in KEYS_HELD:
+            tools.releaseKeys(key)
+
+
 
     return False
 
