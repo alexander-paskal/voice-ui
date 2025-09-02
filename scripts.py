@@ -37,7 +37,7 @@ def call_script(command):
         if parts[1] == "up": tools.moveMouseRel(0, -amount)
         elif parts[1] == "down": tools.moveMouseRel(0, amount)
         elif parts[1] == "left": tools.moveMouseRel(-amount, 0)
-        elif parts[1] == "right": tools.moveMouseRel(amount, 0)
+        elif parts[1] in ( "right", "write"): tools.moveMouseRel(amount, 0)
         
         return True
    
