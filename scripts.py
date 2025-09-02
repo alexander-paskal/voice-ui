@@ -93,6 +93,7 @@ def call_script(command):
 
     if command_stripped == "tabback":
         tools.keyPress("ctrl+shift+tab")
+        return True
 
     if command_stripped == "newwindow":
         tools.keyPress("ctrl+shift+n")
