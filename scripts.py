@@ -136,8 +136,11 @@ def call_script(command):
     if command_stripped == "releasekeys":
         for key in KEYS_HELD:
             tools.releaseKeys(key)
+        return True
 
-
+    if command_stripped == "appselect":
+        tools.holdKeys("alt+tab")
+        return True
 
     return False
 
