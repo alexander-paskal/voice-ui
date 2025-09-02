@@ -88,11 +88,11 @@ def call_script(command):
         tools.keyPress("f4")
         return True
 
-    if command_stripped == "tabover":
+    if command_stripped in ("tabover", "tableover"):
         tools.keyPress("ctrl+tab")
         return True
 
-    if command_stripped == "tabback":
+    if command_stripped == ("tabback", "tableback"):
         tools.keyPress("ctrl+shift+tab")
         return True
 
