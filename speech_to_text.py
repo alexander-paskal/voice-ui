@@ -8,7 +8,7 @@ recognizer = sr.Recognizer()
 
 # Adjust for ambient noise and energy threshold
 with sr.Microphone() as source:
-    recognizer.adjust_for_ambient_noise(source, duration=2)
+    recognizer.adjust_for_ambient_noise(source, duration=3)
     print("Ready! Speak now...")
 
 

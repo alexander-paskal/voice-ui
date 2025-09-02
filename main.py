@@ -29,7 +29,7 @@ if __name__ == "__main__":
         else:
             text = None
             while text is None:
-                text = listen_and_transcribe(verbose=1, pause_threshold=2)
+                text = listen_and_transcribe(verbose=1, pause_threshold=1)
         
         
         if call_script(text):
