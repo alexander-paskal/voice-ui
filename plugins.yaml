@@ -1,0 +1,32 @@
+
+#### Here are the supported command
+# openApp(appName: str):
+# drag(x1, y1, x2, y2):
+# moveMouse(x: int, y:int):
+# moveMouseRel(dx: int, dy: int):
+# leftClick(x: int=None, y: int=None):
+# rightClick(x: int=None, y: int=None):
+# doubleClick(x: int=None, y: int=None):
+# clickAndHold():
+# release():
+# holdKeys(key: str):
+# releaseKeys(key: str):
+# typeText(text: str):
+# scroll(scrollBy: int):
+# keyPress(keyName: str):
+# wait(length: int = 1):
+# use_tool(toolName: str, toolArguments: dict, **kwargs):
+
+
+
+checkEmail:
+- openApp chrome
+- keyPress ctrl+t
+- typeText gmail
+- keyPress enter 
+todoistCalendar:
+- openApp todoist
+- wait 2
+- keyPress g
+- keyPress u
+

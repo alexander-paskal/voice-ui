@@ -38,8 +38,8 @@ def moveMouseRel(dx: int, dy: int):
     curx, cury = pyautogui.position()
     sizex, sizey = pyautogui.size()
 
-    newx = (dx/100)*sizex + curx
-    newy = (dy/100)*sizey + cury
+    newx = (int(dx)/100)*sizex + curx
+    newy = (int(dy)/100)*sizey + cury
     moveMouse(newx, newy)
 
 
@@ -89,7 +89,7 @@ def keyPress(keyName: str):
 
 
 def wait(length: int = 1):
-    time.sleep(length)
+    time.sleep(int(length))
 
 def use_tool(toolName: str, toolArguments: dict, **kwargs):
     globals()[toolName](**toolArguments)
