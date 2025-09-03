@@ -24,6 +24,7 @@ checkEmail:
 - keyPress ctrl+t
 - typeText gmail
 - keyPress enter 
+
 todoistCalendar:
 - openApp todoist
 - wait 2

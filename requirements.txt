@@ -1,6 +1,7 @@
 requests
 pyautogui
 pyaudio
+SpeechRecognition
 pillow
 word2num
 playaudio

@@ -74,8 +74,8 @@ def releaseKeys(key: str):
     pyautogui.keyUp(key)
 
 
-def typeText(text: str):
-    text = str(text)
+def typeText(*texts: str):
+    text = " ".join(texts)
     pyautogui.typewrite(text)
 
 def scroll(scrollBy: int):
