@@ -28,6 +28,11 @@ if __name__ == "__main__":
     if not args.text_mode:
         from speech_to_text import listen_and_transcribe
 
+
+    print("""
+Hello! Welcome to voice-ui!
+"""
+
     while True:
 
         if args.text_mode:
