@@ -22,19 +22,24 @@ if __name__ == "__main__":
     arg_parser.add_argument("--plugins", default="plugins.yaml", help="Path to custom plugins")
 
     args = arg_parser.parse_args()
+    
+    print("""Hello! Welcome to voice-ui!""")
+
+    print("Loading plugins from", args.plugins)
     with open(args.plugins) as f:
         plugins = yaml.safe_load(f)
+    
 
-    if not args.text_mode:
+    if args.text_mode:
+        print("Running in text mode")
+    else:
+        print("Running in speech mode")
         from speech_to_text import listen_and_transcribe
 
 
-    print("""
-Hello! Welcome to voice-ui!
-""")
 
     while True:
-
+        
         if args.text_mode:
             text = input("Enter prompt: ")
         else:
