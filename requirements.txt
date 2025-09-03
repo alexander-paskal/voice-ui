@@ -4,3 +4,4 @@ pyaudio
 pillow
 word2num
 playaudio
+pyyaml
