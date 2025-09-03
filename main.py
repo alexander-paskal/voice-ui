@@ -33,9 +33,8 @@ if __name__ == "__main__":
     if args.text_mode:
         print("Running in text mode")
     else:
-        print("Running in speech mode")
         from speech_to_text import listen_and_transcribe
-
+        print("Running in speech mode")
 
 
     while True:
@@ -44,6 +43,7 @@ if __name__ == "__main__":
             text = input("Enter prompt: ")
         else:
             text = None
+            print("listening ...")
             while text is None:
                 text = listen_and_transcribe(verbose=1, pause_threshold=1)
     
